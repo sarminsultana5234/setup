@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link  href="{% static 'login/css/style.css' %}" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>ABC School</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav_logo">
+          <h1><a href="index.html">ABC SCHOOL</a></h1>
+        </div>
+        <ul class="nav_link">
+          {% if user.is_authenticated %}
+            <li><a href="#">{{user.username}}</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'home'%}">Login</a></li>
+          {% endif %}
+          <li><a href="student.html">Students</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="home">
+        
+      
+          <h1 style="color: rgb(13, 2, 2); font-weight:400;">Home Contents Will Be Here</h1>
+      </section>
+    </main>
+  </body>
+</html>
